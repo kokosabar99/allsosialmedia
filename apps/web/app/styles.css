@@ -51,3 +51,11 @@
 .platform-info p{color:#aab7d3;line-height:1.8}
 .platform-pill{display:inline-block;padding:10px 16px;background:#292d4b;border:1px solid #494775;border-radius:30px;color:#c5baff;font-size:13px;margin-top:15px}
 .platform-workspace>.btn{align-self:flex-start}
+
+/* Web-only in-dashboard website preview */
+.internal-browser{background:#121b2d;border:1px solid #34415e;border-radius:18px;overflow:hidden;min-height:650px}
+.internal-browser-toolbar{display:flex;align-items:center;gap:15px;padding:14px;background:#1a2540;border-bottom:1px solid #384460}
+.internal-browser-address{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:#0e1627;border:1px solid #394564;border-radius:10px;padding:12px 16px;color:#b6c3de;font-size:13px}
+.internal-browser-notice{padding:10px 18px;background:#26233e;color:#d2c9fa;font-size:12px;line-height:1.5}
+.internal-browser-frame{display:block;width:100%;height:min(76vh,900px);min-height:520px;border:0;background:#fff}
+@media(max-width:650px){.internal-browser-toolbar{flex-wrap:wrap}.internal-browser-address{flex-basis:100%}.internal-browser-frame{min-height:450px}}
