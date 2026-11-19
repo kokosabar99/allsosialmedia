@@ -59,3 +59,8 @@
 .internal-browser-notice{padding:10px 18px;background:#26233e;color:#d2c9fa;font-size:12px;line-height:1.5}
 .internal-browser-frame{display:block;width:100%;height:min(76vh,900px);min-height:520px;border:0;background:#fff}
 @media(max-width:650px){.internal-browser-toolbar{flex-wrap:wrap}.internal-browser-address{flex-basis:100%}.internal-browser-frame{min-height:450px}}
+
+/* Full-size website viewport in the dashboard. Third-party frame policies still apply. */
+.projectx-content.platform-fullscreen{padding:0!important;max-width:none!important;margin:0!important;height:100dvh;overflow:hidden;display:flex;flex-direction:column}
+.platform-browser{width:100%;height:100%;min-height:0;flex:1;overflow:hidden;background:#fff}
+.platform-browser-frame{width:100%;height:100%;display:block;border:0;background:#fff}
