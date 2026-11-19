@@ -28,3 +28,10 @@
 .projectx-stats .stat{border:1px solid #34415f;background:linear-gradient(145deg,#18243a,#131d31);box-shadow:0 8px 20px rgba(0,0,0,.1)}
 @media(max-width:900px){.projectx-sidebar{width:76px!important;min-width:76px;padding:18px 8px}.projectx-sidebar .projectx-brand{font-size:0;padding:0 0 12px;justify-content:center}.projectx-sidebar .brand-symbol{font-size:26px}.projectx-sidebar .nav-caption,.projectx-sidebar .social-count{display:none}.projectx-sidebar nav .nav{font-size:0;justify-content:center;padding:10px 4px}.projectx-sidebar nav .nav span{font-size:20px}.projectx-sidebar .projectx-social-item{justify-content:center!important;padding:8px 3px!important}.projectx-sidebar .projectx-social-item span{display:none!important}.projectx-sidebar .projectx-social-item .social-logo{width:28px!important;height:28px!important}.projectx-profile .user-meta,.projectx-profile .exit{display:none}.projectx-content{padding:25px}}
 @media(max-width:600px){.projectx-sidebar{width:62px!important;min-width:62px}.projectx-content{padding:18px}.projectx-content header h1{font-size:25px}}
+
+/* Brand-correct high-contrast LINE and WeChat marks */
+.projectx-sidebar .brand-logo-bg{width:30px;height:30px;min-width:30px;display:flex;align-items:center;justify-content:center;border-radius:9px;flex-shrink:0;box-shadow:0 2px 9px rgba(0,0,0,.18)}
+.projectx-sidebar .brand-logo-line{background:#06c755}
+.projectx-sidebar .brand-logo-wechat{background:#07c160}
+.projectx-sidebar .brand-logo-bg .social-logo{width:23px!important;height:23px!important;min-width:23px!important;filter:brightness(0) invert(1)}
+.projectx-sidebar .brand-logo-plain{width:30px;min-width:30px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
