@@ -31,6 +31,21 @@ app.get('/integrations',async c=>{
  const rows=await sql`SELECT ca.id,ca.platform_id,ca.display_name,ca.status,ca.created_at,p.name AS platform_name FROM connected_accounts ca JOIN platforms p ON p.id=ca.platform_id WHERE ca.user_id=${user.id} ORDER BY ca.created_at DESC`;
  return c.json({accounts:rows,providers:providerIds});
 });
+
+app.get('/whatsapp-business/inbox',async c=>{
+ const user=await currentUser(c);if(!user)return c.json({error:'Belum login'},401);
+ const sql=db(c);
+ const accounts=await sql`SELECT id,display_name,status FROM connected_accounts WHERE user_id=${user.id} AND platform_id='whatsapp_business' ORDER BY created_at DESC`;
+ const conversations=await sql`SELECT cv.id,cv.title,cv.updated_at,ca.display_name AS account_name,(SELECT m.body FROM messages m WHERE m.conversation_id=cv.id AND m.user_id=${user.id} ORDER BY m.sent_at DESC LIMIT 1) AS last_message FROM conversations cv JOIN connected_accounts ca ON ca.id=cv.connected_account_id WHERE cv.user_id=${user.id} AND ca.user_id=${user.id} AND ca.platform_id='whatsapp_business' ORDER BY cv.updated_at DESC LIMIT 100`;
+ return c.json({accounts,conversations});
+});
+app.get('/whatsapp-business/conversations/:id/messages',async c=>{
+ const user=await currentUser(c);if(!user)return c.json({error:'Belum login'},401);
+ const id=c.req.param('id');if(!/^[0-9a-f-]{36}$/i.test(id))return c.json({error:'ID tidak valid'},400);
+ const sql=db(c);
+ const rows=await sql`SELECT m.id,m.direction,m.body,m.sent_at FROM messages m JOIN conversations cv ON cv.id=m.conversation_id JOIN connected_accounts ca ON ca.id=cv.connected_account_id WHERE m.user_id=${user.id} AND cv.user_id=${user.id} AND ca.user_id=${user.id} AND ca.platform_id='whatsapp_business' AND cv.id=${id} ORDER BY m.sent_at ASC LIMIT 200`;
+ return c.json({messages:rows});
+});
 app.notFound(c=>c.json({error:'Endpoint tidak ditemukan'},404));
 app.onError((err,c)=>{console.error(err.message);return c.json({error:'Kesalahan server'},500)});
 export default app;
