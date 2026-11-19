@@ -22,6 +22,15 @@ app.post('/auth/logout',async c=>{const raw=c.req.header('Cookie')||'';const tok
 app.get('/links',async c=>{const user=await currentUser(c);if(!user)return c.json({error:'Belum login'},401);const sql=db(c);const links=await sql`SELECT id,title,url,created_at FROM website_links WHERE user_id=${user.id} ORDER BY created_at DESC LIMIT 500`;return c.json({links})});
 app.post('/links',async c=>{const user=await currentUser(c);if(!user)return c.json({error:'Belum login'},401);const body=await c.req.json().catch(()=>({}));const title=String(body.title||'').trim(),url=validUrl(String(body.url||''));if(!title||title.length>100||!url||url.length>2048)return c.json({error:'Nama atau URL tidak valid. Gunakan http/https.'},400);const sql=db(c);const rows=await sql`INSERT INTO website_links(user_id,title,url) VALUES(${user.id},${title},${url}) RETURNING id,title,url,created_at`;return c.json({link:rows[0]},201)});
 app.delete('/links/:id',async c=>{const user=await currentUser(c);if(!user)return c.json({error:'Belum login'},401);const id=c.req.param('id');if(!/^[0-9a-f-]{36}$/i.test(id))return c.json({error:'ID tidak valid'},400);const sql=db(c);const rows=await sql`DELETE FROM website_links WHERE id=${id} AND user_id=${user.id} RETURNING id`;return rows.length?c.json({ok:true}):c.json({error:'Tautan tidak ditemukan'},404)});
+
+// Provider connection registry: statuses are read from Neon, never fabricated.
+const providerIds=['whatsapp','whatsapp_business','facebook','messenger','instagram','tiktok','telegram','line','wechat','sms','gmail','gallery','music','website'] as const;
+app.get('/integrations',async c=>{
+ const user=await currentUser(c);if(!user)return c.json({error:'Belum login'},401);
+ const sql=db(c);
+ const rows=await sql`SELECT ca.id,ca.platform_id,ca.display_name,ca.status,ca.created_at,p.name AS platform_name FROM connected_accounts ca JOIN platforms p ON p.id=ca.platform_id WHERE ca.user_id=${user.id} ORDER BY ca.created_at DESC`;
+ return c.json({accounts:rows,providers:providerIds});
+});
 app.notFound(c=>c.json({error:'Endpoint tidak ditemukan'},404));
 app.onError((err,c)=>{console.error(err.message);return c.json({error:'Kesalahan server'},500)});
 export default app;
