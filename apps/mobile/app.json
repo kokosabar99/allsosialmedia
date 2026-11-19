@@ -1,0 +1,26 @@
+{
+  "expo": {
+    "name": "PROJECT X",
+    "slug": "project-x-mobile",
+    "scheme": "projectx",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "android": {
+      "package": "dev.projectx.mobile",
+      "permissions": [
+        "INTERNET"
+      ]
+    },
+    "ios": {
+      "bundleIdentifier": "dev.projectx.mobile",
+      "supportsTablet": true
+    },
+    "plugins": [],
+    "extra": {
+      "eas": {
+        "projectId": ""
+      }
+    }
+  }
+}
