@@ -64,3 +64,21 @@
 .projectx-content.platform-fullscreen{padding:0!important;max-width:none!important;margin:0!important;height:100dvh;overflow:hidden;display:flex;flex-direction:column}
 .platform-browser{width:100%;height:100%;min-height:0;flex:1;overflow:hidden;background:#fff}
 .platform-browser-frame{width:100%;height:100%;display:block;border:0;background:#fff}
+
+/* PROJECT X genuine internal WhatsApp Business inbox UI */
+.wa-workspace{width:100%;height:100%;background:#0e1729;color:#eaf0ff;overflow:auto}
+.wa-connect{height:100%;min-height:450px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:18px;padding:36px}
+.wa-connect .social-logo{width:64px!important;height:64px!important}.wa-connect .brand-logo-plain,.wa-connect .brand-logo-bg{width:72px;height:72px;display:flex;align-items:center;justify-content:center}
+.wa-connect h2{font-size:28px;margin:0}.wa-connect p{max-width:620px;line-height:1.8;color:#afbdd7}.wa-connect small{color:#8796b5}
+.wa-business{display:flex;flex-direction:column;height:100%;min-height:560px}
+.wa-business-top{display:flex;align-items:center;gap:16px;padding:22px 28px;border-bottom:1px solid #2d3952;background:#17223a}
+.wa-business-top .social-logo{width:42px!important;height:42px!important}.wa-business-top h2{margin:0;font-size:23px}.wa-business-top p{margin:5px 0 0;color:#9aaed0;font-size:13px}
+.wa-state{margin-left:auto;white-space:nowrap;border-radius:22px;padding:9px 14px;background:#2b2d4b;color:#c9bfff;font-size:12px}
+.wa-business-columns{display:grid;grid-template-columns:minmax(230px,320px) 1fr;flex:1;min-height:0}
+.wa-chat-list{border-right:1px solid #303c55;overflow:auto;padding:18px;background:#121d32}
+.wa-chat-list h3{margin:0 0 20px;font-size:16px}.wa-chat-list p{color:#a9b8d2;line-height:1.7;font-size:13px}
+.wa-chat-row{width:100%;display:flex;flex-direction:column;align-items:flex-start;gap:5px;background:transparent;color:#f3f5ff;border:0;border-radius:10px;padding:14px;text-align:left;cursor:pointer}.wa-chat-row.active,.wa-chat-row:hover{background:#293457}.wa-chat-row small{color:#9aaed0}
+.wa-chat-detail{display:flex;flex-direction:column;min-width:0;background:#0d1628}.wa-chat-placeholder{margin:auto;text-align:center;color:#9caece;padding:30px}.wa-chat-placeholder h3{color:white}
+.wa-chat-messages{display:flex;flex-direction:column;gap:12px;padding:24px;overflow:auto;flex:1}.wa-bubble{align-self:flex-start;max-width:75%;background:#28354d;border-radius:14px;padding:12px 15px;white-space:pre-wrap}.wa-bubble.out{align-self:flex-end;background:#2e564d}.wa-bubble small{display:block;font-size:10px;opacity:.7;margin-top:6px}
+.wa-compose-disabled,.wa-integration-foot{padding:14px 20px;color:#a6b5cf;font-size:12px;background:#17223a;border-top:1px solid #2d3952}
+@media(max-width:700px){.wa-business-top{flex-wrap:wrap;padding:15px}.wa-state{margin-left:0}.wa-business-columns{grid-template-columns:1fr;grid-template-rows:180px 1fr}.wa-chat-list{border-right:0;border-bottom:1px solid #303c55}.wa-business-top h2{font-size:18px}}
