@@ -7,7 +7,7 @@ export async function request(path:string, options:RequestInit={}) {
  return data;
 }
 export const platforms = [
- ['WhatsApp','https://wa.me/','WA'],['WhatsApp Business','https://business.whatsapp.com/','WB'],
+ ['WhatsApp','https://web.whatsapp.com/','WA'],['WhatsApp Business','https://web.whatsapp.com/','WB'],
  ['Facebook','https://www.facebook.com/','FB'],['Facebook Messenger','https://www.messenger.com/','MS'],
  ['Instagram','https://www.instagram.com/','IG'],['TikTok','https://www.tiktok.com/','TK'],
  ['Telegram','https://web.telegram.org/','TG'],['LINE','https://line.me/','LN'],
