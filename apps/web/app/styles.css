@@ -4,3 +4,27 @@
 
 /* PROJECT X social launcher: vertical, scrollable sidebar */
 .sidebar{width:286px;padding-bottom:18px}.sidebar nav{flex-shrink:0}.social-caption{margin-top:24px;margin-bottom:8px}.social-nav{display:flex;flex-direction:column;gap:3px;overflow-y:auto;min-height:90px;flex:1;padding-right:4px;scrollbar-width:thin;scrollbar-color:#394361 transparent}.social-nav-link{display:flex;align-items:center;gap:12px;min-height:43px;padding:8px 12px;border-radius:10px;color:#cbd4eb;font-size:13px;font-weight:600;transition:background .15s}.social-nav-link:hover,.social-nav-link:focus-visible{background:#292e52;color:white}.social-logo{width:25px;height:25px;object-fit:contain;flex-shrink:0}.social-external{margin-left:auto;color:#7783a5}.sidebar-foot{flex-shrink:0;margin-top:12px}.social-nav-link span:nth-child(2){overflow:hidden;text-overflow:ellipsis;white-space:nowrap}@media(max-width:900px){.sidebar{width:75px}.social-caption{display:none}.social-nav-link{justify-content:center;padding:8px 3px}.social-nav-link span{display:none}.social-logo{width:28px;height:28px}.sidebar-foot{justify-content:center}}@media(max-width:600px){.sidebar{width:60px}.social-logo{width:24px;height:24px}}
+
+/* PROJECT X Premium Sidebar v2 — explicit containment fixes */
+.projectx-shell{background:#080d19;min-height:100vh}
+.projectx-sidebar{width:300px!important;min-width:300px;max-width:300px;height:100dvh;position:sticky;top:0;display:flex!important;flex-direction:column!important;overflow:hidden!important;background:linear-gradient(165deg,#141d34 0%,#0d1426 75%,#10152b 100%);border-right:1px solid rgba(165,166,255,.16);padding:26px 16px 16px;box-shadow:10px 0 40px rgba(0,0,0,.12)}
+.projectx-brand{display:flex;align-items:center;gap:5px;white-space:nowrap;font-size:22px;letter-spacing:-.7px;padding:4px 10px 8px}.brand-symbol{color:#9c8aff;font-size:28px;margin-right:5px}
+.projectx-sidebar .nav-caption{margin:25px 12px 10px;font-size:10px;letter-spacing:2.2px;color:#7784a7;font-weight:800}
+.projectx-sidebar nav{display:flex!important;flex-direction:column!important;gap:4px;flex-shrink:0}
+.projectx-sidebar nav .nav{display:flex!important;align-items:center!important;gap:12px;width:100%;font-size:13px;font-weight:600;min-height:42px;padding:11px 13px;border-radius:11px;transition:background .2s}
+.projectx-sidebar nav .nav span{width:20px;font-size:17px;text-align:center;color:#a8a8e8}
+.projectx-sidebar nav .nav.selected{background:linear-gradient(90deg,#4c448d,#333261);box-shadow:inset 3px 0 #aa91ff;color:white}
+.projectx-sidebar .social-caption{margin-top:18px;display:flex;justify-content:space-between;align-items:center}.social-count{letter-spacing:0;color:#b5a5ff;background:#282749;padding:3px 8px;border-radius:6px}
+.projectx-sidebar .projectx-social-list{display:flex!important;flex-direction:column!important;flex-wrap:nowrap!important;align-items:stretch!important;gap:3px!important;width:100%;overflow-x:hidden!important;overflow-y:auto!important;min-height:0;flex:1 1 auto;padding:3px 4px 10px 0}
+.projectx-sidebar .projectx-social-item{display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;align-items:center!important;gap:12px!important;min-height:43px!important;width:100%!important;flex:0 0 auto!important;padding:8px 11px!important;border:1px solid transparent;border-radius:11px;color:#c4cce3;font-size:13px;line-height:1.25;white-space:nowrap;text-decoration:none!important}
+.projectx-sidebar .projectx-social-item:hover{background:#252e4a;border-color:#465079;color:#fff}
+.projectx-sidebar .projectx-social-item .social-logo{display:block!important;width:25px!important;height:25px!important;min-width:25px!important;object-fit:contain}
+.projectx-sidebar .projectx-social-item span:nth-child(2){display:block!important;flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.projectx-sidebar .projectx-social-item .social-external{display:block!important;flex:0 0 auto;color:#7784a7}
+.projectx-profile{margin-top:10px;border-top:1px solid #303955;padding:15px 7px 0}
+.projectx-content{min-width:0;max-width:1800px;margin:0 auto;padding:40px 48px}
+.projectx-content header h1{font-size:32px;letter-spacing:-1px}.projectx-content .eyebrow{letter-spacing:2.5px}
+.projectx-welcome{border:1px solid rgba(167,155,255,.24);box-shadow:0 16px 45px rgba(0,0,0,.12);background:radial-gradient(circle at 85% 40%,#393277,#222846 55%,#1a2440)}
+.projectx-stats .stat{border:1px solid #34415f;background:linear-gradient(145deg,#18243a,#131d31);box-shadow:0 8px 20px rgba(0,0,0,.1)}
+@media(max-width:900px){.projectx-sidebar{width:76px!important;min-width:76px;padding:18px 8px}.projectx-sidebar .projectx-brand{font-size:0;padding:0 0 12px;justify-content:center}.projectx-sidebar .brand-symbol{font-size:26px}.projectx-sidebar .nav-caption,.projectx-sidebar .social-count{display:none}.projectx-sidebar nav .nav{font-size:0;justify-content:center;padding:10px 4px}.projectx-sidebar nav .nav span{font-size:20px}.projectx-sidebar .projectx-social-item{justify-content:center!important;padding:8px 3px!important}.projectx-sidebar .projectx-social-item span{display:none!important}.projectx-sidebar .projectx-social-item .social-logo{width:28px!important;height:28px!important}.projectx-profile .user-meta,.projectx-profile .exit{display:none}.projectx-content{padding:25px}}
+@media(max-width:600px){.projectx-sidebar{width:62px!important;min-width:62px}.projectx-content{padding:18px}.projectx-content header h1{font-size:25px}}
