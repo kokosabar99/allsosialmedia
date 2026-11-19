@@ -1,0 +1,18 @@
+{
+  "name": "PROJECT X — All Social Media",
+  "short_name": "PROJECT X",
+  "description": "Dashboard pribadi PROJECT X",
+  "start_url": "/dashboard/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#090e1b",
+  "theme_color": "#141d34",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
