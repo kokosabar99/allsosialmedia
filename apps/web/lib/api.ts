@@ -1,4 +1,4 @@
-export const API = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8787';
+export const API = process.env.NEXT_PUBLIC_API_URL || '/api';
 export type Account = {id:string; name:string; email:string; role:string};
 export async function request(path:string, options:RequestInit={}) {
  const res = await fetch(API+path, {...options,credentials:'include',headers:{'Content-Type':'application/json',...(options.headers||{})}});
