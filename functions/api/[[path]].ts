@@ -1,4 +1,4 @@
-import app from '../services/api/src/index';
+import app from '../../services/api/src/index';
 type Env={DATABASE_URL:string;JWT_SECRET:string;FRONTEND_ORIGIN:string;COOKIE_SECURE:string};
 export const onRequest:PagesFunction<Env>=async context=>{
  const u=new URL(context.request.url);
