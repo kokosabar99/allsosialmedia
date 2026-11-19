@@ -1,0 +1,10 @@
+const {app,BrowserWindow,WebContentsView,session,shell,ipcMain}=require('electron');
+const path=require('node:path');
+const sites={whatsapp:'https://web.whatsapp.com/',facebook:'https://www.facebook.com/',messenger:'https://www.messenger.com/',instagram:'https://www.instagram.com/',tiktok:'https://www.tiktok.com/',telegram:'https://web.telegram.org/',line:'https://line.me/',wechat:'https://web.wechat.com/',gmail:'https://mail.google.com/'};
+let win,view;
+function hide(){if(view){win.contentView.removeChildView(view);view.webContents.close();view=null}}
+function open(id){if(!Object.hasOwn(sites,id))return false;hide();view=new WebContentsView({webPreferences:{session:session.fromPartition('persist:projectx-'+id),sandbox:true,contextIsolation:true,nodeIntegration:false,webSecurity:true}});win.contentView.addChildView(view);resize();view.webContents.setWindowOpenHandler(({url})=>{shell.openExternal(url).catch(()=>{});return {action:'deny'}});view.webContents.loadURL(sites[id]).catch(()=>{});win.webContents.send('active',id);return true}
+function resize(){if(view&&win){const [w,h]=win.getContentSize();view.setBounds({x:270,y:0,width:Math.max(100,w-270),height:Math.max(100,h)})}}
+ipcMain.handle('open',(_,id)=>open(id));ipcMain.handle('home',()=>{hide();return true});ipcMain.handle('reload',()=>{view?.webContents.reload();return true});ipcMain.handle('back',()=>{if(view?.webContents.navigationHistory.canGoBack())view.webContents.navigationHistory.goBack();return true});
+app.whenReady().then(()=>{win=new BrowserWindow({width:1440,height:900,minWidth:900,minHeight:600,title:'PROJECT X Desktop',backgroundColor:'#0e1729',webPreferences:{preload:path.join(__dirname,'preload.cjs'),sandbox:true,contextIsolation:true,nodeIntegration:false}});win.setMenuBarVisibility(false);win.loadFile(path.join(__dirname,'index.html'));win.on('resize',resize)});
+app.on('window-all-closed',()=>{if(process.platform!=='darwin')app.quit()});
