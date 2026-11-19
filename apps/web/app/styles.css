@@ -35,3 +35,19 @@
 .projectx-sidebar .brand-logo-wechat{background:#07c160}
 .projectx-sidebar .brand-logo-bg .social-logo{width:23px!important;height:23px!important;min-width:23px!important;filter:brightness(0) invert(1)}
 .projectx-sidebar .brand-logo-plain{width:30px;min-width:30px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+/* Platform pages stay inside the dashboard, no external tab */
+.projectx-sidebar .projectx-social-item{font-family:inherit;text-align:left;background:transparent;cursor:pointer;appearance:none}
+.projectx-sidebar .projectx-social-item.platform-selected{background:linear-gradient(90deg,#363666,#252c4a);border-color:#625e98;color:#fff}
+.platform-workspace{border:1px solid #34425e;border-radius:22px;padding:30px;background:linear-gradient(145deg,#19243d,#10192b);min-height:560px;display:flex;flex-direction:column;gap:24px}
+.platform-workspace-head{display:flex;align-items:center;gap:18px;border-bottom:1px solid #303e59;padding-bottom:25px}
+.platform-workspace-head .brand-logo-bg,.platform-workspace-head .brand-logo-plain{width:62px;height:62px;min-width:62px;border-radius:16px;display:flex;align-items:center;justify-content:center}
+.platform-workspace-head .social-logo{width:44px!important;height:44px!important;min-width:44px!important}
+.platform-workspace-head h2{font-size:30px;margin:8px 0 2px}
+.platform-workspace-head p{margin:0}
+.platform-info{max-width:700px;margin:15px auto;text-align:center;padding:42px 25px}
+.platform-info-icon{font-size:45px;color:#a69aff}
+.platform-info h3{font-size:23px}
+.platform-info p{color:#aab7d3;line-height:1.8}
+.platform-pill{display:inline-block;padding:10px 16px;background:#292d4b;border:1px solid #494775;border-radius:30px;color:#c5baff;font-size:13px;margin-top:15px}
+.platform-workspace>.btn{align-self:flex-start}
