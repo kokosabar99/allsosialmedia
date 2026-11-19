@@ -1,1 +1,17 @@
-{"name":"project-x","private":true,"version":"0.1.0","workspaces":["apps/*","services/*"],"scripts":{"dev":"npm run dev -w @project-x/web","dev:api":"npm run dev -w @project-x/api","build":"npm run build -w @project-x/web","deploy:api":"npm run deploy -w @project-x/api"}}
+{
+  "name": "project-x",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "services/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @project-x/web",
+    "dev:api": "npm run dev -w @project-x/api",
+    "build": "npm run build -w @project-x/web",
+    "deploy:api": "npm run deploy -w @project-x/api",
+    "dev:desktop": "npm run start -w @project-x/desktop",
+    "dist:desktop": "npm run dist -w @project-x/desktop"
+  }
+}
